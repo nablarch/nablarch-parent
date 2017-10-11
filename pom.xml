@@ -71,6 +71,23 @@
         </plugins>
       </build>
     </profile>
+    
+    <profile>
+      <id>travis</id>
+      <properties>
+        <gpg.skip>true</gpg.skip>
+      </properties>
+      <distributionManagement>
+        <repository>
+          <id>travis</id>
+          <url>${develop_repo_url}</url>
+        </repository>
+        <site>
+          <id>travis</id>
+          <url>${develop_test_report_url}</url>
+        </site>
+      </distributionManagement>
+    </profile>
   </profiles>
 
   <build>
@@ -131,4 +148,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
 </project>
