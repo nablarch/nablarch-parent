@@ -140,6 +140,7 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- test用の共通的に使われるライブラリのみ定義 -->
     <dependency>
       <groupId>org.jmockit</groupId>
       <artifactId>jmockit</artifactId>
