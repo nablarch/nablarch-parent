@@ -17,6 +17,7 @@
   </properties>
 
   <profiles>
+    <!-- 開発用のprofile -->
     <profile>
       <id>development</id>
       <activation>
@@ -46,6 +47,7 @@
       </build>
     </profile>
     <profile>
+      <!-- CI 用のprofile -->
       <id>ci</id>
       <properties>
         <sonar.host.url>${env.SONAR_URL}</sonar.host.url>
@@ -82,6 +84,7 @@
     </profile>
     
     <profile>
+      <!-- travis 用のprofile -->
       <id>travis</id>
       <properties>
         <gpg.skip>true</gpg.skip>
