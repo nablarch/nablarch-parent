@@ -68,7 +68,7 @@
             <configuration>
               <jvm>${env.TEST_JDK}\bin\java</jvm>
               <argLine>
-                ${junit.argLine}
+                @{argLine} ${junit.argLine}
               </argLine>
             </configuration>
           </plugin>
