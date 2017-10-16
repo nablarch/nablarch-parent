@@ -60,7 +60,7 @@
             <version>3.6.2</version>
             <configuration>
               <fork>true</fork>
-              <executable>${env.JAVA6_HOME}\bin\javac</executable>
+              <executable>${env.COMPILE_JAVA_HOME}\bin\javac</executable>
             </configuration>
           </plugin>
           <plugin>
