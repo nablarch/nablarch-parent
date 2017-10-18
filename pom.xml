@@ -17,35 +17,6 @@
   </properties>
 
   <profiles>
-    <!-- 開発用のprofile -->
-    <profile>
-      <id>development</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.6.2</version>
-            <configuration>
-              <fork>true</fork>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.20</version>
-            <configuration>
-              <argLine>
-                ${junit.argLine}
-              </argLine>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
     <profile>
       <!-- CI 用のprofile -->
       <id>ci</id>
@@ -104,6 +75,24 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.2</version>
+        <configuration>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.20</version>
+        <configuration>
+          <argLine>
+            ${junit.argLine}
+          </argLine>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -175,18 +164,33 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <!-- テストでよく使うライブラリのバージョン定義 -->
+      <dependency>
+        <groupId>org.jmockit</groupId>
+        <artifactId>jmockit</artifactId>
+        <version>1.35</version>
+        <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.4.191</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.nablarch.dev</groupId>
+        <artifactId>nablarch-test-support</artifactId>
+        <version>0.0.8</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
     <!-- test用の共通的に使われるライブラリのみ定義 -->
-    <dependency>
-      <groupId>org.jmockit</groupId>
-      <artifactId>jmockit</artifactId>
-      <version>1.35</version>
-      <scope>test</scope>
-    </dependency>
-    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
