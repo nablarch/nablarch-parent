@@ -10,7 +10,10 @@
   <packaging>pom</packaging>
   
   <properties>
-    <junit.argLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf</junit.argLine>
+    <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf</junit.defaultArgLine>
+    <!-- 各モジュールで設定 (-Xmx等) -->
+    <junit.additionalArgLine/>
+    <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine}</junit.argLine>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
