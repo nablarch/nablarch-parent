@@ -74,6 +74,18 @@
         </site>
       </distributionManagement>
     </profile>
+    
+    <profile>
+      <id>postgres</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.1.4.jre6</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
   </profiles>
 
   <build>
