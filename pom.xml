@@ -58,18 +58,18 @@
     </profile>
     
     <profile>
-      <!-- travis 用のprofile -->
-      <id>travis</id>
+      <!-- 開発時のdeploy用のprofile -->
+      <id>dev-deploy</id>
       <properties>
         <gpg.skip>true</gpg.skip>
       </properties>
       <distributionManagement>
         <repository>
-          <id>travis</id>
+          <id>dev-deploy</id>
           <url>${develop_repo_url}</url>
         </repository>
         <site>
-          <id>travis</id>
+          <id>dev-deploy</id>
           <url>${develop_test_report_url}</url>
         </site>
       </distributionManagement>
