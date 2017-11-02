@@ -111,6 +111,18 @@
       </dependencies>
     </profile>
     
+    <profile>
+      <id>sqlserver</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.microsoft</groupId>
+          <artifactId>sqljdbc4</artifactId>
+          <version>4.0</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    
   </profiles>
 
   <build>
