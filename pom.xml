@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   
   <properties>
-    <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf</junit.defaultArgLine>
+    <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf -Djava.locale.providers=JRE,SPI</junit.defaultArgLine>
     <!-- 各モジュールで設定 (-Xmx等) -->
     <junit.additionalArgLine/>
     <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine}</junit.argLine>
