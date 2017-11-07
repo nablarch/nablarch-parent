@@ -13,7 +13,8 @@
     <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf -Djava.locale.providers=JRE,SPI</junit.defaultArgLine>
     <!-- 各モジュールで設定 (-Xmx等) -->
     <junit.additionalArgLine/>
-    <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine}</junit.argLine>
+    <ci.additionalArgLine />
+    <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine} ${ci.additionalArgLine}</junit.argLine>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
