@@ -185,6 +185,38 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <version>2.1.15</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+            <phase>prepare-package</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <verbose>false</verbose>
+          <failOnNoGitDirectory>false</failOnNoGitDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <git-hash>${git.commit.id}</git-hash>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
     <extensions>
       <extension>
