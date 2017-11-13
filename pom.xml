@@ -8,6 +8,33 @@
   <artifactId>nablarch-parent</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
+
+  <name>${project.artifactId}</name>
+  <description>Nablarch Framework.</description>
+  <url>https://github.com/nablarch</url>
+
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>nablarch</id>
+      <name>Nablarch</name>
+      <email>nablarch@tis.co.jp</email>
+      <organization>Nablarch</organization>
+      <organizationUrl>https://github.com/nablarch</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/nablarch/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git://github.com/nablarch/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/nablarch/${project.artifactId}/tree/master</url>
+  </scm>
   
   <properties>
     <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf -Djava.locale.providers=JRE,SPI</junit.defaultArgLine>
@@ -122,6 +149,48 @@
           <scope>test</scope>
         </dependency>
       </dependencies>
+    </profile>
+
+    <profile>
+      <id>disable-java8-doclint</id>
+      <activation>
+          <jdk>[1.8,)</jdk>
+      </activation>
+      <properties>
+          <additionalparam>-Xdoclint:none</additionalparam>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>ossrh</id>
+      <distributionManagement>
+        <repository>
+          <id>nablarch.staging</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+          <id>nablarch.snapshot</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.5</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     
   </profiles>
