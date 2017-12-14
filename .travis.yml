@@ -13,7 +13,7 @@ script:
 - git clone -b master https://github.com/nablarch/nablarch-ci-script.git $HOME/build-script/
   && chmod +x $HOME/build-script/travis-ci/*.sh
 - $HOME/build-script/travis-ci/prepare_travis_settings.sh
-- $HOME/build-script/travis-ci/build-nablarch.sh -m deploy -p ci,dev-deploy
+- $HOME/build-script/travis-ci/build-nablarch.sh -p ci
 notifications:
   slack:
     secure: wllbeAWEvrKRYx9H2bx/YopNcTbv8Q2qId6Oj+CcFopLRiTgRLDy+oZJyURfFf5IVvH1AjhhvGB4rAzxaC083xPltZ+hOJKvKEHizkGT3auMB4xFWRKGKgI34ytL3bZdgry7RXXL0C6a8QAlaaXGd19jfbtw0Ll1GMoiTIQzZAxKH703P5FhcZWBnjBIGzsXXdGJAV9iEEdTsbwUYJ5SX6ZXGVgx6UAVbNgmG4muh1BaUd6n9xKImQwD4UlUTUT8I6DbHGe00O1W85btWzeUTgcdM300huNjrwo55c7qlBycnDUkjt2Og6yO7AcwiTle5TOJVi7h3wY5cZvYM3+x/PMxMqBn5EjepllQpDzW4Tl8lzS4/hyj5xhz+En7LCDDGLHHibK2cTkteHvGucOO/Y/+QZZeppKl9Nsw6htDwq6EWgpImUDG6hQjSKASm0fLt/QfflaZFvQqNUr0yGCvkGQmucydeu1af/RkVsFVqv2vSTPOPKNxN9r3QdPVgiaEPAK/8dnWiRslpyzIfiEs47xJJyrIk8//8+F23Abcu98yQNzvgPIp1YNcamsNubUSUmUPohBMKjutofCVWSBluKj4TFR9AvNXZQOrD/lM822KEhnXSHo/ajr3E5yzMH3sV0cBRmxfgLG2ajJNT0pPug5pqHXfCSHmdyRPjrg7xNE=
