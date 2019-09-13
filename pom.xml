@@ -119,7 +119,19 @@
         </dependency>
       </dependencies>
     </profile>
-    
+
+    <profile>
+      <id>postgres115</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.2.6.jre6</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
     <profile>
       <id>oracle</id>
       <dependencies>
@@ -131,7 +143,19 @@
         </dependency>
       </dependencies>
     </profile>
-    
+
+    <profile>
+      <id>oracle19c</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.oracle</groupId>
+          <artifactId>ojdbc8</artifactId>
+          <version>19c</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
     <profile>
       <id>db2</id>
       <dependencies>
@@ -143,14 +167,27 @@
         </dependency>
       </dependencies>
     </profile>
-    
+
+    <profile>
+      <id>db2115</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.ibm.db2</groupId>
+          <artifactId>db2jcc4</artifactId>
+          <version>11.5</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+
     <profile>
       <id>sqlserver</id>
       <dependencies>
         <dependency>
-          <groupId>com.microsoft</groupId>
-          <artifactId>sqljdbc4</artifactId>
-          <version>4.0</version>
+          <groupId>com.microsoft.sqlserver</groupId>
+          <artifactId>mssql-jdbc</artifactId>
+          <version>7.4.1.jre8</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
