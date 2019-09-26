@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u15-SNAPSHOT</version>
+  <version>5u15</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
