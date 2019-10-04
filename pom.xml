@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u15-SNAPSHOT</version>
+  <version>5u16-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -356,7 +356,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u15-SNAPSHOT</version>
+        <version>5u16-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
