@@ -356,7 +356,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u16-SNAPSHOT</version>
+        <version>5u16-SNAPSHOT</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -379,7 +379,7 @@
       <dependency>
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.0-SNAPSHOT</version>
         <scope>test</scope>
       </dependency>
       
