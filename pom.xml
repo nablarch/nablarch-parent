@@ -133,6 +133,17 @@
     </profile>
 
     <profile>
+      <id>postgres122</id>
+      <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.10.jre6</version>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>oracle</id>
       <dependencies>
         <dependency>
@@ -192,6 +203,19 @@
         </dependency>
       </dependencies>
     </profile>
+
+    <profile>
+      <id>sqlserver2019</id>
+      <dependencies>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>8.2.1.jre8</version>
+            <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
 
     <profile>
       <id>disable-java8-doclint</id>
