@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u15</version>
+  <version>5u16</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -380,7 +380,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u15</version>
+        <version>5u16</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -403,7 +403,7 @@
       <dependency>
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
-        <version>0.1.0</version>
+        <version>0.2.0</version>
         <scope>test</scope>
       </dependency>
       
