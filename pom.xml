@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u18-SNAPSHOT</version>
+  <version>5-NEXT-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -380,7 +380,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u18-SNAPSHOT</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>5-NEXT-SNAPSHOT</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -403,7 +403,7 @@
       <dependency>
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
-        <version>0.3.0-SNAPSHOT</version>
+        <version>5-NEXT-SNAPSHOT</version>
         <scope>test</scope>
       </dependency>
       
