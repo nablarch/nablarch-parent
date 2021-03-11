@@ -144,6 +144,18 @@
     </profile>
 
     <profile>
+      <id>postgres132</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.2.19.jre6</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>oracle</id>
       <dependencies>
         <dependency>
