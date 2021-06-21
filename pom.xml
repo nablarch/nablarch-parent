@@ -42,8 +42,8 @@
     <junit.additionalArgLine/>
     <ci.additionalArgLine />
     <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine} ${ci.additionalArgLine}</junit.argLine>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmockit.version>1.35</jmockit.version>
     <h2.version>2.1.214</h2.version>
@@ -123,7 +123,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.1.4.jre6</version>
+          <version>42.1.4</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -135,7 +135,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.6.jre6</version>
+          <version>42.2.6</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -147,7 +147,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.10.jre6</version>
+            <version>42.2.10</version>
         </dependency>
       </dependencies>
     </profile>
@@ -158,7 +158,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.19.jre6</version>
+          <version>42.2.19</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -442,38 +442,6 @@
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
         <version>6-NEXT-SNAPSHOT</version>
-        <scope>test</scope>
-      </dependency>
-      
-      <!-- Java 11以降で必要となるライブラリの定義 -->
-      <dependency>
-        <groupId>javax.activation</groupId>
-        <artifactId>javax.activation-api</artifactId>
-        <version>1.2.0</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.sun.activation</groupId>
-        <artifactId>javax.activation</artifactId>
-        <version>1.2.0</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>javax.xml.bind</groupId>
-        <artifactId>jaxb-api</artifactId>
-        <scope>test</scope>
-        <version>2.3.1</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sun.xml.bind</groupId>
-        <artifactId>jaxb-impl</artifactId>
-        <scope>test</scope>
-        <version>2.3.1</version>
-      </dependency>
-      <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <version>${h2.version}</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
