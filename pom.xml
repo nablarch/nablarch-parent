@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u19</version>
+  <version>5u20</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -150,6 +150,18 @@
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
           <version>42.2.19.jre6</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>postgres140</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.2.24.jre6</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -392,7 +404,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u19</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>5u20</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
