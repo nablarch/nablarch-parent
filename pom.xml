@@ -192,6 +192,18 @@
     </profile>
 
     <profile>
+      <id>oracle21c</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.oracle.database.jdbc</groupId>
+          <artifactId>ojdbc8</artifactId>
+          <version>21.3.0.0</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>db2</id>
       <dependencies>
         <dependency>
