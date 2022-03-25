@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u20</version>
+  <version>5u21</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -63,7 +63,7 @@
             <version>3.6.2</version>
             <configuration>
               <fork>true</fork>
-              <executable>${env.COMPILE_JAVA_HOME}\bin\javac</executable>
+              <executable>${env.COMPILE_JAVA_HOME}/bin/javac</executable>
             </configuration>
           </plugin>
           <plugin>
@@ -71,7 +71,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>2.20</version>
             <configuration>
-              <jvm>${env.TEST_JDK}\bin\java</jvm>
+              <jvm>${env.TEST_JDK}/bin/java</jvm>
               <argLine>
                 @{argLine} ${junit.argLine}
               </argLine>
@@ -161,7 +161,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.24.jre6</version>
+          <version>42.2.24</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -186,6 +186,18 @@
           <groupId>com.oracle</groupId>
           <artifactId>ojdbc8</artifactId>
           <version>19c</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>oracle21c</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.oracle.database.jdbc</groupId>
+          <artifactId>ojdbc8</artifactId>
+          <version>21.3.0.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -404,7 +416,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u20</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>5u21</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -427,7 +439,7 @@
       <dependency>
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
-        <version>0.2.1</version>
+        <version>0.3.0</version>
         <scope>test</scope>
       </dependency>
       
