@@ -47,6 +47,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmockit.version>1.35</jmockit.version>
     <h2.version>2.1.214</h2.version>
+    <surefire.plugin.version>2.22.2</surefire.plugin.version>
   </properties>
 
   <profiles>
@@ -70,7 +71,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.20</version>
+            <version>${surefire.plugin.version}</version>
             <configuration>
               <jvm>${env.TEST_JDK}/bin/java</jvm>
               <argLine>
@@ -318,7 +319,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
+        <version>${surefire.plugin.version}</version>
         <configuration>
           <argLine>
             ${junit.argLine}
