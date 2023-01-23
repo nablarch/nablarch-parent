@@ -50,6 +50,20 @@
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
   </properties>
 
+  <repositories>
+    <repository>
+      <!-- EclipseLink 4.0.0 にあるバグによってテストが落ちるので、
+           一時的に修正が入っているスナップショット版を利用する
+           https://github.com/eclipse-ee4j/eclipselink/issues/1750
+      -->
+      <id>eclipselink-snapshot</id>
+      <url>https://jakarta.oss.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <profiles>
     <profile>
       <!-- CI 用のprofile -->
