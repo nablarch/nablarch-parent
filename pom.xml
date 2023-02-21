@@ -42,13 +42,43 @@
     <junit.additionalArgLine/>
     <ci.additionalArgLine />
     <junit.argLine>${junit.defaultArgLine} ${junit.additionalArgLine} ${ci.additionalArgLine}</junit.argLine>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmockit.version>1.35</jmockit.version>
     <h2.version>2.1.214</h2.version>
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
+    <!-- Jakarta EE 互換ライブラリのバージョン(ci = compatible implementation) -->
+    <jakarta-mail.ci.version>1.1.0</jakarta-mail.ci.version>
+    <jakarta-activation.ci.version>1.0.0</jakarta-activation.ci.version>
+    <jakarta-messaging.ci.version>2.28.0</jakarta-messaging.ci.version>
+    <jakarta-xml-binding.ci.version>4.0.1</jakarta-xml-binding.ci.version>
+    <jakarta-el.ci.version>5.0.0</jakarta-el.ci.version>
+    <jakarta-standard-tag-library.ci.version>3.0.0</jakarta-standard-tag-library.ci.version>
+    <jakarta-bean-validation.ci.version>8.0.0.Final</jakarta-bean-validation.ci.version>
+    <jakarta-persistence.ci.version>4.0.1-SNAPSHOT</jakarta-persistence.ci.version>
+    <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
+    <!-- Arquillian で使用する WildFly のバージョン -->
+    <arquillian-wildfly.version>27.0.1.Final</arquillian-wildfly.version>
+    <arquillian-wildfly-container.version>5.0.0.Alpha6</arquillian-wildfly-container.version>
+    <!-- Arquillian で使用する BOM のバージョン -->
+    <arquillian-bom.version>1.7.0.Alpha13</arquillian-bom.version>
+    <shrinkwrap-resolver-bom.version>3.1.4</shrinkwrap-resolver-bom.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <!-- EclipseLink 4.0.0 にあるバグによってテストが落ちるので、
+           一時的に修正が入っているスナップショット版を利用する
+           https://github.com/eclipse-ee4j/eclipselink/issues/1750
+      -->
+      <id>eclipselink-snapshot</id>
+      <url>https://jakarta.oss.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <profiles>
     <profile>
@@ -444,8 +474,138 @@
         <version>6-NEXT-SNAPSHOT</version>
         <scope>test</scope>
       </dependency>
+      
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- Jakarta EE の BOM, API -->
+      <dependency>
+        <groupId>jakarta.platform</groupId>
+        <artifactId>jakarta.jakartaee-bom</artifactId>
+        <version>10.0.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>jakarta.platform</groupId>
+        <artifactId>jakarta.jakartaee-api</artifactId>
+        <version>10.0.0</version>
+      </dependency>
+
+      <!-- Jakarta EE の互換ライブラリのバージョン定義 -->
+      <!-- Jakarta Mail -->
+      <dependency>
+        <groupId>org.eclipse.angus</groupId>
+        <artifactId>pop3</artifactId>
+        <version>${jakarta-mail.ci.version}</version>
+      </dependency>
+  
+      <dependency>
+        <groupId>org.eclipse.angus</groupId>
+        <artifactId>smtp</artifactId>
+        <version>${jakarta-mail.ci.version}</version>
+      </dependency>
+      
+      <!-- Jakarta Messaging -->
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>artemis-server</artifactId>
+        <version>${jakarta-messaging.ci.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>artemis-jakarta-server</artifactId>
+        <version>${jakarta-messaging.ci.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>artemis-jakarta-client</artifactId>
+        <version>${jakarta-messaging.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta Activation -->
+      <dependency>
+        <groupId>org.eclipse.angus</groupId>
+        <artifactId>angus-activation</artifactId>
+        <version>${jakarta-activation.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta XML Binding -->
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>${jakarta-xml-binding.ci.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-core</artifactId>
+        <version>${jakarta-xml-binding.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta Expression Language -->
+      <dependency>
+        <groupId>org.glassfish.expressly</groupId>
+        <artifactId>expressly</artifactId>
+        <version>${jakarta-el.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta Standard Tag Library -->
+      <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        <version>${jakarta-standard-tag-library.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta Bean Validation -->
+      <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${jakarta-bean-validation.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta Persistence -->
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>eclipselink</artifactId>
+        <version>${jakarta-persistence.ci.version}</version>
+      </dependency>
+
+      <!-- Jakarta RESTful Web Services -->
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-client</artifactId>
+        <version>${jakarta-rest-client.ci.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jackson2-provider</artifactId>
+        <version>${jakarta-rest-client.ci.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jaxb-provider</artifactId>
+        <version>${jakarta-rest-client.ci.version}</version>
+      </dependency>
+
+      <!-- Arquillian 関係 -->
+      <dependency>
+        <groupId>org.wildfly.arquillian</groupId>
+        <artifactId>wildfly-arquillian-container-embedded</artifactId>
+        <version>${arquillian-wildfly-container.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+
 
   <dependencies>
     <!-- test用の共通的に使われるライブラリのみ定義 -->
