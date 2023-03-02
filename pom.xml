@@ -54,7 +54,7 @@
     <jakarta-messaging.ci.version>2.28.0</jakarta-messaging.ci.version>
     <jakarta-xml-binding.ci.version>4.0.1</jakarta-xml-binding.ci.version>
     <jakarta-el.ci.version>5.0.0</jakarta-el.ci.version>
-    <jakarta-standard-tag-library.ci.version>3.0.0</jakarta-standard-tag-library.ci.version>
+    <jakarta-standard-tag-library.ci.version>3.0.1</jakarta-standard-tag-library.ci.version>
     <jakarta-bean-validation.ci.version>8.0.0.Final</jakarta-bean-validation.ci.version>
     <jakarta-persistence.ci.version>4.0.1-SNAPSHOT</jakarta-persistence.ci.version>
     <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
