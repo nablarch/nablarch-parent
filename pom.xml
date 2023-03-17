@@ -177,6 +177,18 @@
     </profile>
 
     <profile>
+      <id>postgres152</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.5.4</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>oracle</id>
       <dependencies>
         <dependency>
@@ -261,6 +273,17 @@
       </dependencies>
     </profile>
 
+    <profile>
+      <id>sqlserver2022</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.microsoft.sqlserver</groupId>
+          <artifactId>mssql-jdbc</artifactId>
+          <version>12.2.0.jre8</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
 
     <profile>
       <id>disable-java8-doclint</id>
