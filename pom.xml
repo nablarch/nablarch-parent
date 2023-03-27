@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u21</version>
+  <version>5u22</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -46,6 +46,8 @@
     <maven.compiler.target>1.6</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmockit.version>1.35</jmockit.version>
+    <h2.version>2.1.214</h2.version>
+    <surefire.plugin.version>2.22.2</surefire.plugin.version>
   </properties>
 
   <profiles>
@@ -69,7 +71,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.20</version>
+            <version>${surefire.plugin.version}</version>
             <configuration>
               <jvm>${env.TEST_JDK}/bin/java</jvm>
               <argLine>
@@ -107,7 +109,14 @@
         </site>
       </distributionManagement>
     </profile>
-    
+
+    <profile>
+      <id>h2-1</id>
+      <properties>
+        <h2.version>1.4.191</h2.version>
+      </properties>
+    </profile>
+
     <profile>
       <id>postgres</id>
       <dependencies>
@@ -162,6 +171,18 @@
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
           <version>42.2.24</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>postgres152</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.5.4</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -252,6 +273,17 @@
       </dependencies>
     </profile>
 
+    <profile>
+      <id>sqlserver2022</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.microsoft.sqlserver</groupId>
+          <artifactId>mssql-jdbc</artifactId>
+          <version>12.2.0.jre8</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
 
     <profile>
       <id>disable-java8-doclint</id>
@@ -310,7 +342,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20</version>
+        <version>${surefire.plugin.version}</version>
         <configuration>
           <argLine>
             ${junit.argLine}
@@ -416,7 +448,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u21</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>5u22</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -426,13 +458,6 @@
         <groupId>org.jmockit</groupId>
         <artifactId>jmockit</artifactId>
         <version>${jmockit.version}</version>
-        <scope>test</scope>
-      </dependency>
-      
-      <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <version>1.4.191</version>
         <scope>test</scope>
       </dependency>
 
@@ -467,6 +492,12 @@
         <artifactId>jaxb-impl</artifactId>
         <scope>test</scope>
         <version>2.3.1</version>
+      </dependency>
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
