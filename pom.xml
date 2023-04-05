@@ -57,7 +57,7 @@
     <jakarta-el.ci.version>5.0.0</jakarta-el.ci.version>
     <jakarta-standard-tag-library.ci.version>3.0.1</jakarta-standard-tag-library.ci.version>
     <jakarta-bean-validation.ci.version>8.0.0.Final</jakarta-bean-validation.ci.version>
-    <jakarta-persistence.ci.version>4.0.1-SNAPSHOT</jakarta-persistence.ci.version>
+    <jakarta-persistence.ci.version>4.0.1</jakarta-persistence.ci.version>
     <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
     <!-- Arquillian で使用する WildFly のバージョン -->
     <arquillian-wildfly.version>27.0.1.Final</arquillian-wildfly.version>
@@ -66,20 +66,6 @@
     <arquillian-bom.version>1.7.0.Alpha13</arquillian-bom.version>
     <shrinkwrap-resolver-bom.version>3.1.4</shrinkwrap-resolver-bom.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <!-- EclipseLink 4.0.0 にあるバグによってテストが落ちるので、
-           一時的に修正が入っているスナップショット版を利用する
-           https://github.com/eclipse-ee4j/eclipselink/issues/1750
-      -->
-      <id>eclipselink-snapshot</id>
-      <url>https://jakarta.oss.sonatype.org/content/repositories/snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
   <profiles>
     <profile>
