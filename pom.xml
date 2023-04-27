@@ -46,7 +46,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jmockit.version>1.35</jmockit.version>
+    <mockito.version>5.3.0</mockito.version>
     <jacoco.version>0.8.8</jacoco.version>
     <h2.version>2.1.214</h2.version>
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
@@ -415,7 +415,7 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
         <executions>
-          <!-- javaagent を使うと jmockit がエラーになるので Offline Instrumentation を使用する -->
+          <!-- かつて jmockit を使っていたときに javaagent を使うとエラーになったので Offline Instrumentation にした経緯がある -->
           <execution>
             <id>default-instrument</id>
             <goals>
@@ -523,9 +523,9 @@
 
       <!-- テストでよく使うライブラリのバージョン定義 -->
       <dependency>
-        <groupId>org.jmockit</groupId>
-        <artifactId>jmockit</artifactId>
-        <version>${jmockit.version}</version>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
         <scope>test</scope>
       </dependency>
 
