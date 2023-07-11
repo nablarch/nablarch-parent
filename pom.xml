@@ -60,12 +60,10 @@
     <jakarta-bean-validation.ci.version>8.0.0.Final</jakarta-bean-validation.ci.version>
     <jakarta-persistence.ci.version>4.0.1</jakarta-persistence.ci.version>
     <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
-    <!-- Arquillian で使用する WildFly のバージョン -->
-    <arquillian-wildfly.version>27.0.1.Final</arquillian-wildfly.version>
-    <arquillian-wildfly-container.version>5.0.0.Alpha6</arquillian-wildfly-container.version>
     <!-- Arquillian で使用する BOM のバージョン -->
-    <arquillian-bom.version>1.7.0.Alpha13</arquillian-bom.version>
-    <shrinkwrap-resolver-bom.version>3.1.4</shrinkwrap-resolver-bom.version>
+    <arquillian-bom.version>1.7.0.Final</arquillian-bom.version>
+    <payara-bom.version>6.2023.6</payara-bom.version>
+    <shrinkwrap-resolver-bom.version>3.2.0</shrinkwrap-resolver-bom.version>
   </properties>
 
   <profiles>
@@ -658,12 +656,6 @@
         <version>${jakarta-rest-client.ci.version}</version>
       </dependency>
 
-      <!-- Arquillian 関係 -->
-      <dependency>
-        <groupId>org.wildfly.arquillian</groupId>
-        <artifactId>wildfly-arquillian-container-embedded</artifactId>
-        <version>${arquillian-wildfly-container.version}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
