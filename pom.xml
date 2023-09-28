@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>5u22</version>
+  <version>5u23</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -46,7 +46,7 @@
     <maven.compiler.target>1.6</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmockit.version>1.35</jmockit.version>
-    <h2.version>2.1.214</h2.version>
+    <h2.version>2.2.220</h2.version>
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
   </properties>
 
@@ -220,6 +220,17 @@
           <artifactId>ojdbc8</artifactId>
           <version>21.3.0.0</version>
           <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>oracle23c</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.oracle.database.jdbc</groupId>
+          <artifactId>ojdbc8</artifactId>
+          <version>23.2.0.0</version>
         </dependency>
       </dependencies>
     </profile>
@@ -448,7 +459,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u22</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>5u23</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -464,7 +475,7 @@
       <dependency>
         <groupId>com.nablarch.dev</groupId>
         <artifactId>nablarch-test-support</artifactId>
-        <version>0.3.0</version>
+        <version>0.4.0</version>
         <scope>test</scope>
       </dependency>
       
