@@ -48,7 +48,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <mockito.version>5.3.0</mockito.version>
     <jacoco.version>0.8.8</jacoco.version>
-    <h2.version>2.1.214</h2.version>
+    <h2.version>2.2.220</h2.version>
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
     <!-- Jakarta EE 互換ライブラリのバージョン(ci = compatible implementation) -->
     <jakarta-mail.ci.version>1.1.0</jakarta-mail.ci.version>
@@ -266,6 +266,17 @@
       <properties>
         <junit.additionalArgLine.db-profile>-Ddb-profile=oracle21c</junit.additionalArgLine.db-profile>
       </properties>
+    </profile>
+
+    <profile>
+      <id>oracle23c</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.oracle.database.jdbc</groupId>
+          <artifactId>ojdbc8</artifactId>
+          <version>23.2.0.0</version>
+        </dependency>
+      </dependencies>
     </profile>
 
     <profile>
