@@ -62,7 +62,7 @@
     <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
     <!-- Arquillian で使用する BOM のバージョン -->
     <arquillian-bom.version>1.7.0.Final</arquillian-bom.version>
-    <payara-bom.version>6.2023.6</payara-bom.version>
+    <payara-bom.version>6.2023.12</payara-bom.version>
     <shrinkwrap-resolver-bom.version>3.2.0</shrinkwrap-resolver-bom.version>
   </properties>
 
