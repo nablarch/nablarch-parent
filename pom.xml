@@ -135,36 +135,6 @@
     </profile>
 
     <profile>
-      <id>postgres</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.postgresql</groupId>
-          <artifactId>postgresql</artifactId>
-          <version>42.1.4</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>postgres115</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.postgresql</groupId>
-          <artifactId>postgresql</artifactId>
-          <version>42.2.6</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres115</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
       <id>postgres122</id>
       <dependencies>
         <dependency>
@@ -184,7 +154,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.19</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -199,7 +169,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.24</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -214,27 +184,12 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.5.4</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
       <properties>
         <junit.additionalArgLine.db-profile>-Ddb-profile=postgres152</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>oracle</id>
-      <dependencies>
-        <dependency>
-          <groupId>com.oracle</groupId>
-          <artifactId>ojdbc6</artifactId>
-          <version>11.2.0.4.0</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=oracle</junit.additionalArgLine.db-profile>
       </properties>
     </profile>
 
@@ -280,27 +235,12 @@
     </profile>
 
     <profile>
-      <id>db2</id>
-      <dependencies>
-        <dependency>
-          <groupId>com.ibm.db2</groupId>
-          <artifactId>db2jcc4</artifactId>
-          <version>10.5</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=db2</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
       <id>db2115</id>
       <dependencies>
         <dependency>
           <groupId>com.ibm.db2</groupId>
-          <artifactId>db2jcc4</artifactId>
-          <version>11.5</version>
+          <artifactId>jcc</artifactId>
+          <version>11.5.9.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -316,7 +256,7 @@
         <dependency>
           <groupId>com.microsoft.sqlserver</groupId>
           <artifactId>mssql-jdbc</artifactId>
-          <version>7.4.1.jre8</version>
+          <version>12.6.1.jre11</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -331,7 +271,7 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>8.2.1.jre8</version>
+            <version>12.6.1.jre11</version>
             <scope>test</scope>
         </dependency>
       </dependencies>
@@ -346,7 +286,7 @@
         <dependency>
           <groupId>com.microsoft.sqlserver</groupId>
           <artifactId>mssql-jdbc</artifactId>
-          <version>12.2.0.jre8</version>
+          <version>12.6.1.jre11</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
