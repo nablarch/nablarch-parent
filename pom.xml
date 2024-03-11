@@ -194,6 +194,21 @@
     </profile>
 
     <profile>
+      <id>postgres162</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.7.2</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres162</junit.additionalArgLine.db-profile>
+      </properties>
+    </profile>
+
+    <profile>
       <id>oracle19c</id>
       <dependencies>
         <dependency>
