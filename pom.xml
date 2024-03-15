@@ -6,7 +6,7 @@
 
   <groupId>com.nablarch</groupId>
   <artifactId>nablarch-parent</artifactId>
-  <version>6</version>
+  <version>6u1</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}</name>
@@ -61,8 +61,8 @@
     <jakarta-persistence.ci.version>4.0.1</jakarta-persistence.ci.version>
     <jakarta-rest-client.ci.version>6.2.2.Final</jakarta-rest-client.ci.version>
     <!-- Arquillian で使用する BOM のバージョン -->
-    <arquillian-bom.version>1.7.0.Final</arquillian-bom.version>
-    <payara-bom.version>6.2023.6</payara-bom.version>
+    <arquillian-bom.version>1.8.0.Final</arquillian-bom.version>
+    <payara-bom.version>6.2023.12</payara-bom.version>
     <shrinkwrap-resolver-bom.version>3.2.0</shrinkwrap-resolver-bom.version>
   </properties>
 
@@ -135,42 +135,12 @@
     </profile>
 
     <profile>
-      <id>postgres</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.postgresql</groupId>
-          <artifactId>postgresql</artifactId>
-          <version>42.1.4</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>postgres115</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.postgresql</groupId>
-          <artifactId>postgresql</artifactId>
-          <version>42.2.6</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres115</junit.additionalArgLine.db-profile>
-      </properties>
-    </profile>
-
-    <profile>
       <id>postgres122</id>
       <dependencies>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.10</version>
+            <version>42.7.2</version>
         </dependency>
       </dependencies>
       <properties>
@@ -184,7 +154,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.19</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -199,7 +169,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.2.24</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -214,7 +184,7 @@
         <dependency>
           <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>42.5.4</version>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -224,17 +194,17 @@
     </profile>
 
     <profile>
-      <id>oracle</id>
+      <id>postgres162</id>
       <dependencies>
         <dependency>
-          <groupId>com.oracle</groupId>
-          <artifactId>ojdbc6</artifactId>
-          <version>11.2.0.4.0</version>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.7.2</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
       <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=oracle</junit.additionalArgLine.db-profile>
+        <junit.additionalArgLine.db-profile>-Ddb-profile=postgres162</junit.additionalArgLine.db-profile>
       </properties>
     </profile>
 
@@ -242,9 +212,9 @@
       <id>oracle19c</id>
       <dependencies>
         <dependency>
-          <groupId>com.oracle</groupId>
-          <artifactId>ojdbc8</artifactId>
-          <version>19c</version>
+          <groupId>com.oracle.database.jdbc</groupId>
+          <artifactId>ojdbc11</artifactId>
+          <version>23.2.0.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -258,8 +228,8 @@
       <dependencies>
         <dependency>
           <groupId>com.oracle.database.jdbc</groupId>
-          <artifactId>ojdbc8</artifactId>
-          <version>21.3.0.0</version>
+          <artifactId>ojdbc11</artifactId>
+          <version>23.2.0.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -273,25 +243,10 @@
       <dependencies>
         <dependency>
           <groupId>com.oracle.database.jdbc</groupId>
-          <artifactId>ojdbc8</artifactId>
+          <artifactId>ojdbc11</artifactId>
           <version>23.2.0.0</version>
         </dependency>
       </dependencies>
-    </profile>
-
-    <profile>
-      <id>db2</id>
-      <dependencies>
-        <dependency>
-          <groupId>com.ibm.db2</groupId>
-          <artifactId>db2jcc4</artifactId>
-          <version>10.5</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <properties>
-        <junit.additionalArgLine.db-profile>-Ddb-profile=db2</junit.additionalArgLine.db-profile>
-      </properties>
     </profile>
 
     <profile>
@@ -299,8 +254,8 @@
       <dependencies>
         <dependency>
           <groupId>com.ibm.db2</groupId>
-          <artifactId>db2jcc4</artifactId>
-          <version>11.5</version>
+          <artifactId>jcc</artifactId>
+          <version>11.5.9.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -316,7 +271,7 @@
         <dependency>
           <groupId>com.microsoft.sqlserver</groupId>
           <artifactId>mssql-jdbc</artifactId>
-          <version>7.4.1.jre8</version>
+          <version>12.6.1.jre11</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -331,7 +286,7 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>8.2.1.jre8</version>
+            <version>12.6.1.jre11</version>
             <scope>test</scope>
         </dependency>
       </dependencies>
@@ -346,7 +301,7 @@
         <dependency>
           <groupId>com.microsoft.sqlserver</groupId>
           <artifactId>mssql-jdbc</artifactId>
-          <version>12.2.0.jre8</version>
+          <version>12.6.1.jre11</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -525,7 +480,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>6</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
+        <version>6u1</version> <!-- 注：nablarch-test-supportについては本pomファイルにバージョンを記載しているので、リリース時にこの行を書き換えるタイミングで、あわせてバージョンを修正してください。 -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
