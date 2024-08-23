@@ -53,7 +53,7 @@
     <!-- Jakarta EE 互換ライブラリのバージョン(ci = compatible implementation) -->
     <jakarta-mail.ci.version>1.1.0</jakarta-mail.ci.version>
     <jakarta-activation.ci.version>1.0.0</jakarta-activation.ci.version>
-    <jakarta-messaging.ci.version>2.28.0</jakarta-messaging.ci.version>
+    <jakarta-messaging.ci.version>2.37.0</jakarta-messaging.ci.version>
     <jakarta-xml-binding.ci.version>4.0.1</jakarta-xml-binding.ci.version>
     <jakarta-el.ci.version>5.0.0</jakarta-el.ci.version>
     <jakarta-standard-tag-library.ci.version>3.0.1</jakarta-standard-tag-library.ci.version>
