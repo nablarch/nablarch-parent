@@ -239,7 +239,7 @@
     </profile>
 
     <profile>
-      <id>oracle23c</id>
+      <id>oracle23ai</id>
       <dependencies>
         <dependency>
           <groupId>com.oracle.database.jdbc</groupId>
