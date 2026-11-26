@@ -37,7 +37,7 @@
   </scm>
   
   <properties>
-    <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf -Djava.locale.providers=JRE,SPI</junit.defaultArgLine>
+    <junit.defaultArgLine>-Dfile.encoding=utf-8 -Djdk.attach.allowAttachSelf</junit.defaultArgLine>
     <!-- 各モジュールで設定 (-Xmx等) -->
     <junit.additionalArgLine/>
     <junit.additionalArgLine.db-profile/>
@@ -46,7 +46,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <mockito.version>5.3.0</mockito.version>
+    <mockito.version>5.24.0</mockito.version>
     <jacoco.version>0.8.8</jacoco.version>
     <h2.version>2.2.220</h2.version>
     <surefire.plugin.version>2.22.2</surefire.plugin.version>
@@ -63,6 +63,9 @@
     <!-- Arquillian で使用する BOM のバージョン -->
     <arquillian-bom.version>1.8.0.Final</arquillian-bom.version>
     <payara-bom.version>6.2023.12</payara-bom.version>
+    <!-- Arquillian の結合テストで使用する組み込み GlassFish とそのアダプタのバージョン -->
+    <glassfish-embedded.version>7.1.1</glassfish-embedded.version>
+    <arquillian-glassfish-embedded.version>1.8</arquillian-glassfish-embedded.version>
     <shrinkwrap-resolver-bom.version>3.2.0</shrinkwrap-resolver-bom.version>
   </properties>
 
